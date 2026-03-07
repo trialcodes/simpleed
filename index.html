@@ -220,53 +220,6 @@ text-align:center;
 border-top:2px solid red;
 }
 
-/* MOBILE */
-
-@media(max-width:768px){
-
-.menu-toggle{
-display:block;
-position:absolute;
-right:20px;
-top:15px;
-z-index:2000;
-}
-
-nav{
-position:absolute;
-top:60px;
-left:0;
-width:100%;
-background:#111;
-flex-direction:column;
-display:none;
-transition:0.3s;
-}
-
-nav.show{
-display:flex;
-}
-
-nav a{
-padding:15px;
-border-bottom:1px solid #222;
-text-align:center;
-}
-
-.hero h2{
-font-size:32px;
-}
-
-.hero p{
-font-size:16px;
-}
-
-.section{
-padding:60px 20px;
-}
-
-}
-
 .faq-item{
 max-width:700px;
 margin:10px auto;
@@ -331,6 +284,78 @@ transition:.3s;
 background:#ff2e2e;
 }
 
+     header .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+header .logo img.logo-img {
+  width: 40px;        /* logo size */
+  height: 40px;
+  object-fit: contain;
+}
+
+/* Adjust h1 next to logo */
+header .logo h1 {
+  color: red;
+  margin: 0;
+  font-size: 24px;
+  letter-spacing: 2px;
+}
+
+     /* MOBILE */
+
+@media(max-width:768px){
+
+.menu-toggle{
+display:block;
+position:absolute;
+right:20px;
+top:15px;
+z-index:2000;
+}
+
+nav{
+position:absolute;
+top:60px;
+left:0;
+width:100%;
+background:#111;
+flex-direction:column;
+display:none;
+transition:0.3s;
+}
+
+nav.show{
+display:flex;
+}
+
+nav a{
+padding:15px;
+border-bottom:1px solid #222;
+text-align:center;
+}
+
+.hero h2{
+font-size:32px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+.section{
+padding:60px 20px;
+}
+header .logo img.logo-img {
+    width: 30px;
+    height: 30px;
+}
+header .logo h1 {
+font-size: 20px;
+}
+}
 
 </style>
 </head>
@@ -339,7 +364,10 @@ background:#ff2e2e;
 
 <header>
 
-<h1>SIMPLEED</h1>
+ <div class="logo">
+    <img src="download1.png" alt="SIMPLEED Logo" class="logo-img">
+    <h1>SIMPLEED</h1>
+  </div>
 
 <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
@@ -614,6 +642,7 @@ counter("c3",150);
 
 </body>
 </html>
+
 
 
 
