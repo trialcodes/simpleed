@@ -333,19 +333,20 @@ header .logo h1 {
 
 .rating-bar {
   width: 100%;
+  max-width: 400px;
   height: 20px;
-  background: #1a1a1a;
+  background: #333;
   border-radius: 10px;
   overflow: hidden;
-  margin-bottom: 5px;
+  margin: 10px 0;
 }
 
 .rating-fill {
   height: 100%;
-  background: linear-gradient(90deg, red, #ff2e2e);
-  border-radius: 10px 0 0 10px;
-  width: 0; /* start from 0% */
-  transition: width 1.5s ease-in-out;
+  background: red;
+  width: 0;
+  border-radius: 10px;
+  transition: width 2s ease-in-out;
 }
 
 .rating-percent {
@@ -762,6 +763,7 @@ window.addEventListener("load", animateOnScroll);
 
 </body>
 </html>
+
 
 
 
