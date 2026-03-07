@@ -10,6 +10,7 @@
 
 <title>SIMPLEED Digital Services</title>
 
+
 <style>
 
 html{scroll-behavior:smooth;}
@@ -31,9 +32,10 @@ background:#111;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:15px 30px;
+padding:15px 20px;
 z-index:1000;
 border-bottom:2px solid red;
+box-sizing:border-box;
 }
 
 header h1{
@@ -64,8 +66,9 @@ color:red;
 
 .menu-toggle{
 display:none;
-font-size:26px;
+font-size:28px;
 cursor:pointer;
+color:white;
 }
 
 /* HERO */
@@ -223,28 +226,31 @@ border-top:2px solid red;
 
 .menu-toggle{
 display:block;
+position:absolute;
+right:20px;
+top:15px;
+z-index:2000;
 }
 
 nav{
 position:absolute;
-top:65px;
-right:65px;
+top:60px;
 left:0;
 width:100%;
 background:#111;
 flex-direction:column;
 display:none;
+transition:0.3s;
+}
+
+nav.show{
+display:flex;
 }
 
 nav a{
 padding:15px;
 border-bottom:1px solid #222;
-width:100%;
 text-align:center;
-}
-
-nav.show{
-display:flex;
 }
 
 .hero h2{
@@ -261,7 +267,7 @@ padding:60px 20px;
 
 }
 
-     .faq-item{
+.faq-item{
 max-width:700px;
 margin:10px auto;
 text-align:left;
@@ -437,7 +443,20 @@ style="width:100%;max-width:600px;border-radius:10px;margin-top:10px;">
 
 <div class="member">
 <img src="p4.jpg">
-<p>UI Designer</p>
+<p>Website Developer</p>
+</div>
+
+<div class="member">
+<img src="p5.jpg">
+<p>Web & Mobile App Developer</p>
+</div>
+
+<div class="member">
+<img src="p6.jpg">
+<p>Web & Mobile App</p>
+</div>
+
+
 </div>
 
 </div>
@@ -505,34 +524,42 @@ style="width:100%;max-width:600px;border-radius:10px;margin-top:10px;">
 <p>© 2026 SIMPLEED</p>
 
 </footer>
-
 <script>
 
 function toggleMenu(){
-document.getElementById("navMenu").classList.toggle("show");
+var menu = document.getElementById("navMenu");
+menu.classList.toggle("show");
 }
+
+/* close menu when clicking link */
+document.querySelectorAll("#navMenu a").forEach(function(link){
+link.addEventListener("click", function(){
+document.getElementById("navMenu").classList.remove("show");
+});
+});
 
 /* COUNTER */
 
 function counter(id,target){
 
 let c=0;
-let i=setInterval(()=>{
-c++
-document.getElementById(id).innerText=c
-if(c==target) clearInterval(i)
-},20)
+let i=setInterval(function(){
+c++;
+document.getElementById(id).innerText=c;
+if(c==target) clearInterval(i);
+},20);
 
 }
 
-counter("c1",120)
-counter("c2",80)
-counter("c3",150)
+counter("c1",120);
+counter("c2",80);
+counter("c3",150);
 
 </script>
 
 </body>
 </html>
+
 
 
 
