@@ -7,340 +7,459 @@
      crossorigin="anonymous">
 </script>
 <style>
-html { scroll-behavior:smooth; }
 
-body {
-  margin:0;
-  font-family:Arial, Helvetica, sans-serif;
-  background:#0d0d0d;
-  color:#ffffff;
+html{scroll-behavior:smooth;}
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#0b0b0b;
+color:white;
 }
 
 /* HEADER */
-header {
-  position:fixed;
-  top:0;
-  width:100%;
-  background:#111;
-  padding:15px 30px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  z-index:1000;
-  border-bottom:2px solid red;
+
+header{
+position:fixed;
+top:0;
+width:100%;
+background:#111;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 30px;
+z-index:1000;
+border-bottom:2px solid red;
 }
 
-header h1 {
-  margin:0;
-  font-size:26px;
-  color:red;
+header h1{
+color:red;
+margin:0;
+font-size:24px;
+letter-spacing:2px;
 }
 
-nav a {
-  color:white;
-  margin-left:15px;
-  margin-right:25px;
-  text-decoration:none;
-  font-weight:bold;
-  transition:0.3s;
-}
-
-nav a:hover { color:red; }
-
-.cta-btn {
-  background:red;
-  padding:10px 18px;
-  border-radius:5px;
-  color:white;
-  text-decoration:none;
-}
-
-/* HERO */
-.hero {
-  height:100vh;
-  padding-top:100px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  background:linear-gradient(rgba(0,0,0,0.85),rgba(0,0,0,0.9)),
-    url('a14e301f-06ad-40c3-9022-8f45f6cd1aec.png');
-  background-size:cover;
-  background-position:center;
-}
-
-.hero h2 {
-  font-size:48px;
-  color:red;
-  margin-bottom:15px;
-}
-
-.hero p {
-  font-size:20px;
-  margin-bottom:30px;
-}
-
-/* SECTIONS */
-.section {
-  max-width:1100px;
-  margin:auto;
-  padding:80px 40px;
-  text-align:center;
-}
-
-.section h3 {
-  font-size:34px;
-  color:red;
-  margin-bottom:30px;
-}
-
-/* SERVICES */
-.services {
-  display:flex;
-  flex-wrap:wrap;
-  gap:20px;
-  justify-content:center;
-}
-
-.service-box {
-  background:#1a1a1a;
-  padding:25px;
-  border-radius:8px;
-  width:260px;
-  box-shadow:0 0 10px rgba(255,0,0,0.2);
-  transition:0.3s;
-}
-
-.service-box:hover {
-  transform:scale(1.05);
-  box-shadow:0 0 15px red;
-}
-
-.service-box h4 {
-  color:red;
-  margin-bottom:10px;
-}
-
-/* IMAGE BOX */
-.img {
-  width:180px;
-  border-radius:10px;
-  margin-bottom:15px;
-}
-
-/* TESTIMONIALS */
-.testimonials {
-  background:#111;
-}
-
-.testimonial {
-  background:#1a1a1a;
-  padding:20px;
-  margin:10px;
-  border-radius:6px;
-}
-
-/* FOOTER */
-footer {
-  background:#000;
-  text-align:center;
-  padding:25px;
-  border-top:2px solid red;
-}
-
-/* MOBILE */
-@media(max-width:768px) {
-  header {
-    flex-direction:column;
-    align-items:flex-start;
-  }
-
-  nav {
-    display:flex;
-    flex-direction:column;
-    width:100%;
-    margin-top:10px;
-  }
-
-  nav a {
-    margin:6px 0;
-  }
-
-  .services {
-    flex-direction:column;
-    align-items:center;
-  }
-
-     .menu-toggle{
-  display:none;
-  font-size:28px;
-  cursor:pointer;
-  color:white;
-}
-
-/* NAVIGATION */
-nav{
-  display:flex;
-  align-items:center;
-}
-
-/* MOBILE NAV */
-@media(max-width:768px){
-
-.menu-toggle{
-  display:block;
-  position:absolute;
-  right:25px;
-  top:15px;
-}
+/* NAV */
 
 nav{
-  position:absolute;
-  top:65px;
-  left:0;
-  width:100%;
-  background:#111;
-  flex-direction:column;
-  display:none;
-  border-top:1px solid #333;
+display:flex;
+align-items:center;
 }
 
 nav a{
-  padding:15px;
-  border-bottom:1px solid #222;
-  width:100%;
-  text-align:center;
+color:white;
+text-decoration:none;
+margin-left:20px;
+font-weight:bold;
+transition:0.3s;
+}
+
+nav a:hover{
+color:red;
+}
+
+.menu-toggle{
+display:none;
+font-size:26px;
+cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:100px 20px;
+background:
+linear-gradient(rgba(0,0,0,.85),rgba(0,0,0,.9)),
+url('a14e301f-06ad-40c3-9022-8f45f6cd1aec.png');
+background-size:cover;
+background-position:center;
+}
+
+.hero h2{
+font-size:52px;
+color:red;
+margin-bottom:15px;
+}
+
+.hero p{
+font-size:20px;
+max-width:700px;
+}
+
+.cta{
+margin-top:30px;
+background:red;
+padding:14px 30px;
+border-radius:6px;
+text-decoration:none;
+color:white;
+font-weight:bold;
+transition:.3s;
+}
+
+.cta:hover{
+background:#ff2e2e;
+}
+
+/* SECTION */
+
+.section{
+padding:80px 40px;
+max-width:1100px;
+margin:auto;
+text-align:center;
+}
+
+.section h3{
+font-size:36px;
+color:red;
+margin-bottom:40px;
+}
+
+/* SERVICES */
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:25px;
+}
+
+.service-box{
+background:#151515;
+padding:25px;
+border-radius:10px;
+transition:.3s;
+box-shadow:0 0 15px rgba(255,0,0,0.2);
+}
+
+.service-box:hover{
+transform:translateY(-8px);
+box-shadow:0 0 25px red;
+}
+
+.service-box img{
+width:90px;
+margin-bottom:15px;
+}
+
+.service-box h4{
+color:red;
+}
+
+/* COUNTER */
+
+.counter{
+display:flex;
+justify-content:center;
+gap:40px;
+flex-wrap:wrap;
+}
+
+.count-box{
+background:#151515;
+padding:25px;
+border-radius:10px;
+width:180px;
+}
+
+.count-box h2{
+color:red;
+font-size:36px;
+margin:0;
+}
+
+/* TEAM */
+
+.team{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:20px;
+}
+
+.member{
+background:#151515;
+padding:20px;
+border-radius:10px;
+}
+
+.member img{
+width:100%;
+border-radius:8px;
+margin-bottom:10px;
+}
+
+/* TESTIMONIAL */
+
+.testimonial{
+background:#151515;
+padding:20px;
+margin:10px auto;
+border-radius:8px;
+max-width:700px;
+}
+
+/* FOOTER */
+
+footer{
+background:#000;
+padding:30px;
+text-align:center;
+border-top:2px solid red;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.menu-toggle{
+display:block;
+}
+
+nav{
+position:absolute;
+top:65px;
+left:0;
+width:100%;
+background:#111;
+flex-direction:column;
+display:none;
+}
+
+nav a{
+padding:15px;
+border-bottom:1px solid #222;
+width:100%;
+text-align:center;
 }
 
 nav.show{
-  display:flex;
+display:flex;
+}
+
+.hero h2{
+font-size:32px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+.section{
+padding:60px 20px;
 }
 
 }
-     
-}
+
 </style>
 </head>
 
 <body>
 
 <header>
+
 <h1>SIMPLEED</h1>
-<div class="menu-toggle" onclick="toggleMenu()">
-☰
-</div>
+
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
 <nav id="navMenu">
-  <a href="#home">Home</a>
-  <a href="#services">Services</a>
-  <a href="#team">Team</a>
-  <a href="#about">About</a>
-  <a href="#faq">FAQ</a>
-  <a href="#contact" class="cta-btn">Contact</a>
+<a href="#home">Home</a>
+<a href="#services">Services</a>
+<a href="#about">About</a>
+<a href="#team">Team</a>
+<a href="#contact">Contact</a>
 </nav>
+
 </header>
+
+<!-- HERO -->
+
+<section id="home" class="hero">
+
+<h2>Digital Solutions For Modern Businesses</h2>
+
+<p>
+Website Systems • Desktop Applications • Mobile Apps • Hosting & Domains • Tech Products
+</p>
+
+<a href="#services" class="cta">Explore Services</a>
+
+</section>
+
+<!-- SERVICES -->
+
+<section id="services" class="section">
+
+<h3>Our Services</h3>
+
+<div class="services">
+
+<div class="service-box">
+<img src="download3.png">
+<h4>Website Systems</h4>
+<p>Responsive business platforms to automate operations.</p>
+</div>
+
+<div class="service-box">
+<img src="download1.png">
+<h4>Desktop Applications</h4>
+<p>Powerful custom business systems for offline use.</p>
+</div>
+
+<div class="service-box">
+<img src="download4.png">
+<h4>Mobile Applications</h4>
+<p>Android & iOS apps to reach customers anywhere.</p>
+</div>
+
+<div class="service-box">
+<img src="download12.png">
+<h4>Hosting & Domains</h4>
+<p>Reliable hosting and secure domain registration.</p>
+</div>
+
+<div class="service-box">
+<img src="download22.png">
+<h4>Tech Products</h4>
+<p>Innovative digital and hardware technology products.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- COUNTERS -->
+
+<section class="section">
+
+<h3>Our Achievements</h3>
+
+<div class="counter">
+
+<div class="count-box">
+<h2 id="c1">0</h2>
+<p>Projects</p>
+</div>
+
+<div class="count-box">
+<h2 id="c2">0</h2>
+<p>Clients</p>
+</div>
+
+<div class="count-box">
+<h2 id="c3">0</h2>
+<p>Systems Built</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about" class="section">
+
+<h3>About SIMPLEED</h3>
+
+<p style="max-width:700px;margin:auto;text-align:justify;">
+SIMPLEED delivers cutting-edge digital solutions helping businesses automate transactions and improve efficiency through websites, desktop apps, mobile apps, hosting and tech products.
+</p>
+
+</section>
+
+<!-- TEAM -->
+
+<section id="team" class="section">
+
+<h3>Our Team</h3>
+
+<div class="team">
+
+<div class="member">
+<img src="p1.jpg">
+<p>Website Developer</p>
+</div>
+
+<div class="member">
+<img src="p2.jpg">
+<p>Hardware Developer</p>
+</div>
+
+<div class="member">
+<img src="p3.jpg">
+<p>Marketing Specialist</p>
+</div>
+
+<div class="member">
+<img src="p4.jpg">
+<p>UI Designer</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- TESTIMONIAL -->
+
+<section id="contact" class="section">
+
+<h3>Client Feedback</h3>
+
+<div class="testimonial">
+"SIMPLEED automated our business systems perfectly."
+</div>
+
+<div class="testimonial">
+"Excellent hosting and domain services."
+</div>
+
+<div class="testimonial">
+"Our mobile app improved productivity."
+</div>
+
+</section>
+
+<footer>
+
+<p>Contact: 1996dragrat@gmail.com | +63 9975 373 560</p>
+
+<p>© 2026 SIMPLEED</p>
+
+</footer>
 
 <script>
 
 function toggleMenu(){
-  var menu = document.getElementById("navMenu");
-  menu.classList.toggle("show");
+document.getElementById("navMenu").classList.toggle("show");
 }
+
+/* COUNTER */
+
+function counter(id,target){
+
+let c=0;
+let i=setInterval(()=>{
+c++
+document.getElementById(id).innerText=c
+if(c==target) clearInterval(i)
+},20)
+
+}
+
+counter("c1",120)
+counter("c2",80)
+counter("c3",150)
 
 </script>
 
-<!-- HERO -->
-<section id="home" class="hero">
-<h2>Transactions Automation & Digital Services</h2>
-<p>Website Systems • Desktop Apps • Mobile Apps • Hosting & Domains • Tech Products</p>
-<a href="#services" class="cta-btn">Explore Services</a>
-</section>
-
-<!-- SERVICES -->
-<section id="services" class="section">
-<h3>Our Services</h3>
-<div class="services">
-  <div class="service-box">
-    <img src="download3.png" class="img" alt="Website Development">
-    <h4>Website Systems</h4>
-    <p>Professional and responsive web platforms to automate your business operations.</p>
-  </div>
-  <div class="service-box">
-    <img src="download1.png" class="img" alt="Desktop Applications">
-    <h4>Desktop Applications</h4>
-    <p>Custom offline systems for businesses to manage transactions and data efficiently.</p>
-  </div>
-  <div class="service-box">
-    <img src="download4.png" class="img" alt="Mobile Apps">
-    <h4>Mobile Applications</h4>
-    <p>Cross-platform mobile apps for businesses to reach and serve clients anytime, anywhere.</p>
-  </div>
-  <div class="service-box">
-    <img src="download12.png" class="img" alt="Hosting & Domain">
-    <h4>Hosting & Domains</h4>
-    <p>Secure domain registration and reliable hosting to keep your digital services online 24/7.</p>
-  </div>
-  <div class="service-box">
-    <img src="download22.png" class="img" alt="Tech Products">
-    <h4>Tech Products</h4>
-    <p>Innovative hardware and software products to enhance business operations.</p>
-  </div>
-</div>
-</section>
-
-<!-- ABOUT -->
-<section id="about" class="section">
-<h3>About SIMPLEED</h3>
-<p style="max-width:700px;margin:auto;margin-top:30px;text-align:justify;">
-SIMPLEED delivers cutting-edge digital solutions and tech products, helping businesses automate transactions and improve efficiency. We specialize in building professional websites, robust desktop and mobile applications, reliable hosting, and secure domain registration, all designed to streamline operations and enhance digital presence. Our team combines technical expertise with a customer-focused approach to ensure every solution is tailored to the unique needs of each business, enabling companies to operate more effectively in the digital world.
-</p>
-<p style="max-width:700px;margin:auto;margin-top:30px;text-align:justify;">
-Beyond standard services, SIMPLEED also provides innovative tech products that integrate seamlessly into your existing systems, offering businesses the tools they need to manage data, track transactions, and optimize workflows. By leveraging the latest technologies and industry best practices, we empower our clients to achieve operational excellence, improve productivity, and stay ahead in an increasingly competitive market, making digital transformation accessible and efficient for all business sizes.
-</p>
-<img src="a14e301f-06ad-40c3-9022-8f45f6cd1aec.png" style="height:40vh;width:76vh; margin-top:20px;"; alt="Tech Products">
-</section>
-
-<!-- TEAM -->
-<section id="team" class="section">
-<h3>Our Team</h3>
-<div class="services">
-  <div class="service-box"><img src="p4.jpg" class="img"><h4>UI Designer & Website Developer</h4></div>
-  <div class="service-box"><img src="p1.jpg" class="img"><h4>UI Designer & Website Developer</h4></div>
-  <div class="service-box"><img src="p2.jpg" class="img"><h4>IOT Based & Hardware Developer</h4></div>
-  <div class="service-box"><img src="p6.jpg" class="img"><h4>Website & Mobile App Developer</h4></div>
-  <div class="service-box"><img src="p5.jpg" class="img"><h4>Website & Mobile App Developer</h4></div>
-  <div class="service-box"><img src="p3.jpg" class="img"><h4>Marketing Specialist</h4></div>
-</div>
-</section>
-
-<!-- FAQ -->
-<section id="faq" class="section">
-<h3>FAQ</h3>
-<h4>What services does SIMPLEED provide?</h4>
-<p>We provide website systems, desktop and mobile applications, hosting & domains, and tech products to automate business transactions.</p>
-
-<h4>Can you create custom business solutions?</h4>
-<p>Yes. We build custom digital solutions to match your business needs for web, desktop, and mobile platforms.</p>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="section testimonials">
-<h3>Client Feedback</h3>
-<div class="testimonial">"SIMPLEED made our operations fully automated and efficient."</div>
-<div class="testimonial">"Reliable hosting and domain services with excellent support."</div>
-<div class="testimonial">"Our mobile and desktop apps improved workflow significantly."</div>
-</section>
-
-<footer>
-<p>Contact: 1996dragrat@gmail.com | +63 9975 373 560 | <a href="https://facebook.com/drag.rat.3">Facebook</a></p>
-<p>© 2026 SIMPLEED. All Rights Reserved.</p>
-<p>Digital Services • Transactions Automation • Web • Mobile • Desktop • Hosting • Domain</p>
-</footer>
-
 </body>
-
 </html>
+
 
 
 
