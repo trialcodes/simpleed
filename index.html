@@ -305,7 +305,7 @@ header .logo h1 {
   letter-spacing: 2px;
 }
 
-     #ratings {
+#ratings {
   padding: 80px 40px;
   max-width: 800px;
   margin: auto;
@@ -344,6 +344,7 @@ header .logo h1 {
   height: 100%;
   background: linear-gradient(90deg, red, #ff2e2e);
   border-radius: 10px 0 0 10px;
+  width: 0; /* start from 0% */
   transition: width 1.5s ease-in-out;
 }
 
@@ -716,25 +717,59 @@ document.getElementById("navMenu").classList.remove("show");
 
 /* COUNTER */
 
-function counter(id,target){
-
-let c=0;
-let i=setInterval(function(){
-c++;
-document.getElementById(id).innerText=c;
-if(c==target) clearInterval(i);
-},20);
-
+function animateCounter(id, target) {
+  let c = 0;
+  let i = setInterval(function() {
+    c++;
+    document.getElementById(id).innerText = c;
+    if(c >= target) clearInterval(i);
+  }, 20);
 }
 
-counter("c1",120);
-counter("c2",80);
-counter("c3",150);
+function counterOnScroll() {
+  const achievements = document.getElementById("achievements");
+  const counters = [
+    { id: "c1", target: 120 },
+    { id: "c2", target: 80 },
+    { id: "c3", target: 150 }
+  ];
+
+  const sectionTop = achievements.getBoundingClientRect().top;
+  const screenHeight = window.innerHeight;
+
+  if (sectionTop < screenHeight - 50) {
+    counters.forEach(c => animateCounter(c.id, c.target));
+    // Remove listener so it runs only once
+    window.removeEventListener("scroll", counterOnScroll);
+  }
+}
+
+window.addEventListener("scroll", counterOnScroll);
+     
+function animateRatings() {
+  const ratingsSection = document.getElementById("ratings");
+  const ratingFills = document.querySelectorAll(".rating-fill");
+  
+  const sectionPos = ratingsSection.getBoundingClientRect().top;
+  const screenPos = window.innerHeight;
+
+  if (sectionPos < screenPos - 50) {
+    ratingFills.forEach(fill => {
+      const width = fill.getAttribute("data-width");
+      fill.style.width = width;
+    });
+    // Remove event listener after animation runs
+    window.removeEventListener("scroll", animateRatings);
+  }
+}
+
+window.addEventListener("scroll", animateRatings);
 
 </script>
 
 </body>
 </html>
+
 
 
 
