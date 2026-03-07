@@ -717,58 +717,52 @@ document.getElementById("navMenu").classList.remove("show");
 
 /* COUNTER */
 
+let countersAnimated = false;
+let ratingsAnimated = false;
+
 function animateCounter(id, target) {
   let c = 0;
-  let i = setInterval(function() {
+  let i = setInterval(() => {
     c++;
     document.getElementById(id).innerText = c;
-    if(c >= target) clearInterval(i);
+    if (c >= target) clearInterval(i);
   }, 20);
 }
 
-function counterOnScroll() {
-  const achievements = document.getElementById("achievements");
-  const counters = [
-    { id: "c1", target: 120 },
-    { id: "c2", target: 80 },
-    { id: "c3", target: 150 }
-  ];
-
-  const sectionTop = achievements.getBoundingClientRect().top;
-  const screenHeight = window.innerHeight;
-
-  if (sectionTop < screenHeight - 50) {
-    counters.forEach(c => animateCounter(c.id, c.target));
-    // Remove listener so it runs only once
-    window.removeEventListener("scroll", counterOnScroll);
-  }
-}
-
-window.addEventListener("scroll", counterOnScroll);
-     
 function animateRatings() {
-  const ratingsSection = document.getElementById("ratings");
-  const ratingFills = document.querySelectorAll(".rating-fill");
-  
-  const sectionPos = ratingsSection.getBoundingClientRect().top;
-  const screenPos = window.innerHeight;
+  document.querySelectorAll(".rating-fill").forEach(bar => {
+    const fill = bar.getAttribute("data-fill");
+    bar.style.width = fill;
+  });
+}
 
-  if (sectionPos < screenPos - 50) {
-    ratingFills.forEach(fill => {
-      const width = fill.getAttribute("data-width");
-      fill.style.width = width;
-    });
-    // Remove event listener after animation runs
-    window.removeEventListener("scroll", animateRatings);
+function animateOnScroll() {
+  const achievements = document.getElementById("achievements");
+  const top = achievements.getBoundingClientRect().top;
+  const windowHeight = window.innerHeight;
+
+  if (top < windowHeight - 50) {
+    if (!countersAnimated) {
+      animateCounter("c1", 120);
+      animateCounter("c2", 80);
+      animateCounter("c3", 150);
+      countersAnimated = true;
+    }
+
+    if (!ratingsAnimated) {
+      animateRatings();
+      ratingsAnimated = true;
+    }
   }
 }
 
-window.addEventListener("scroll", animateRatings);
-
+window.addEventListener("scroll", animateOnScroll);
+window.addEventListener("load", animateOnScroll); 
 </script>
 
 </body>
 </html>
+
 
 
 
