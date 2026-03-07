@@ -332,7 +332,7 @@ header .logo h1 {
 }
 
 .rating-bar {
-  width: 100%;
+   width: 100%;
   max-width: 400px;
   height: 20px;
   background: #333;
@@ -496,24 +496,20 @@ Website Systems • Desktop Applications • Mobile Apps • Hosting & Domains �
 
 <h3>Our Achievements</h3>
 
-<div class="counter">
-
-<div class="count-box">
-<h2 id="c1">0</h2>
-<p>Projects</p>
-</div>
-
-<div class="count-box">
-<h2 id="c2">0</h2>
-<p>Clients</p>
-</div>
-
-<div class="count-box">
-<h2 id="c3">0</h2>
-<p>Systems Built</p>
-</div>
-
-</div>
+ <div class="counter">
+    <div class="count-box">
+      <h2 id="c1">0</h2>
+      <p>Projects</p>
+    </div>
+    <div class="count-box">
+      <h2 id="c2">0</h2>
+      <p>Clients</p>
+    </div>
+    <div class="count-box">
+      <h2 id="c3">0</h2>
+      <p>Systems Built</p>
+    </div>
+  </div>
 
 </section>
 
@@ -619,10 +615,10 @@ style="width:100%;max-width:600px;border-radius:10px;margin-top:10px;">
      <section id="ratings" class="section">
   <h3>Our Ratings</h3>
 
-  <div class="rating-container">
+ <div class="rating-container">
     <span class="rating-label">Customer Satisfaction</span>
     <div class="rating-bar">
-      <div class="rating-fill" data-fill="90%" style="width: 90%;"></div>
+      <div class="rating-fill" data-fill="90%"></div>
     </div>
     <span class="rating-percent">90%</span>
   </div>
@@ -630,7 +626,7 @@ style="width:100%;max-width:600px;border-radius:10px;margin-top:10px;">
 <div class="rating-container">
     <span class="rating-label">Desktop Application</span>
     <div class="rating-bar">
-      <div class="rating-fill" data-fill="85%" style="width: 85%;"></div>
+      <div class="rating-fill" data-fill="85%"</div>
     </div>
     <span class="rating-percent">85%</span>
   </div>
@@ -638,7 +634,7 @@ style="width:100%;max-width:600px;border-radius:10px;margin-top:10px;">
   <div class="rating-container">
     <span class="rating-label">Website Systems</span>
     <div class="rating-bar">
-      <div class="rating-fill" data-fill="95%" style="width: 95%;"></div>
+      <div class="rating-fill" data-fill="95%" ></div>
     </div>
     <span class="rating-percent">95%</span>
   </div>
@@ -646,7 +642,7 @@ style="width:100%;max-width:600px;border-radius:10px;margin-top:10px;">
   <div class="rating-container">
     <span class="rating-label">Mobile Apps</span>
     <div class="rating-bar">
-      <div class="rating-fill" data-fill="90%" style="width: 90%;"></div>
+      <div class="rating-fill" data-fill="90%"></div>
     </div>
     <span class="rating-percent">90%</span>
   </div>
@@ -654,7 +650,7 @@ style="width:100%;max-width:600px;border-radius:10px;margin-top:10px;">
   <div class="rating-container">
     <span class="rating-label">Hosting & Domains</span>
     <div class="rating-bar">
-      <div class="rating-fill" data-fill="95%" style="width: 85%;"></div>
+      <div class="rating-fill" data-fill="85%"></div>
     </div>
     <span class="rating-percent">85%</span>
   </div>
@@ -718,51 +714,58 @@ document.getElementById("navMenu").classList.remove("show");
 
 /* COUNTER */
 
-let countersAnimated = false;
-let ratingsAnimated = false;
+document.addEventListener("DOMContentLoaded", function () {
+  let countersAnimated = false;
+  let ratingsAnimated = false;
 
-function animateCounter(id, target) {
-  let c = 0;
-  let i = setInterval(() => {
-    c++;
-    document.getElementById(id).innerText = c;
-    if (c >= target) clearInterval(i);
-  }, 20);
-}
+  function animateCounter(id, target) {
+    let c = 0;
+    let i = setInterval(() => {
+      c++;
+      document.getElementById(id).innerText = c;
+      if (c >= target) clearInterval(i);
+    }, 20);
+  }
 
-function animateRatings() {
-  document.querySelectorAll(".rating-fill").forEach(bar => {
-    const fill = bar.getAttribute("data-fill");
-    bar.style.width = fill;
-  });
-}
+  function animateRatings() {
+    document.querySelectorAll(".rating-fill").forEach(bar => {
+      const fill = bar.getAttribute("data-fill");
+      bar.style.width = fill;
+    });
+  }
 
-function animateOnScroll() {
-  const achievements = document.getElementById("achievements");
-  const top = achievements.getBoundingClientRect().top;
-  const windowHeight = window.innerHeight;
+  function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return rect.top < window.innerHeight && rect.bottom >= 0;
+  }
 
-  if (top < windowHeight - 50) {
-    if (!countersAnimated) {
-      animateCounter("c1", 120);
-      animateCounter("c2", 80);
-      animateCounter("c3", 150);
-      countersAnimated = true;
-    }
+  function animateOnScroll() {
+    const section = document.getElementById("achievements");
 
-    if (!ratingsAnimated) {
-      animateRatings();
-      ratingsAnimated = true;
+    if (isElementInViewport(section)) {
+      if (!countersAnimated) {
+        animateCounter("c1", 120);
+        animateCounter("c2", 80);
+        animateCounter("c3", 150);
+        countersAnimated = true;
+      }
+
+      if (!ratingsAnimated) {
+        animateRatings();
+        ratingsAnimated = true;
+      }
     }
   }
-}
 
-window.addEventListener("scroll", animateOnScroll);
-window.addEventListener("load", animateOnScroll); 
+  window.addEventListener("scroll", animateOnScroll);
+  window.addEventListener("resize", animateOnScroll);
+  animateOnScroll(); // check on load
+});
 </script>
 
 </body>
 </html>
+
 
 
 
