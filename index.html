@@ -690,7 +690,17 @@ style="width:100%;max-width:600px;border-radius:10px;margin-top:10px;">
 
 <h3>Contact Us</h3>
 
-<form onsubmit="sendMail(); return false;">
+<form onsubmit="sendMail(); return false;" class="contact-form">
+
+<input id="name" type="text" placeholder="Your Name" required>
+
+<input id="email" type="email" placeholder="Your Email" required>
+
+<textarea id="message" placeholder="Your Message" required></textarea>
+
+<button type="submit">Send Message</button>
+
+</form>
 
 <input id="name" type="text" placeholder="Your Name" required>
 
@@ -802,6 +812,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </body>
 </html>
+
 
 
 
