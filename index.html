@@ -697,13 +697,24 @@ style="width:100%;max-width:600px;border-radius:10px;margin-top:10px;">
 
 <footer>
 
-<p>Contact: 1996dragrat@gmail.com | +63 9975 373 560</p>
+<div class="visitor-counter">
+👁 Visitors: <span id="visits">Loading...</span>
+</div>
 
-<p>© 2026 SIMPLEED</p>
+<p>Contact: 1996dragrat@gmail.com | +63 9975 373 560 </p>
+
+<p>© 2026 SIMPLEED. All Rights Reserved.</p>
 
 </footer>
+     
 <script>
 
+fetch("counter.php")
+.then(response => response.text())
+.then(data => {
+document.getElementById("visits").innerText = data;
+});
+     
 function toggleMenu(){
 var menu = document.getElementById("navMenu");
 menu.classList.toggle("show");
@@ -769,6 +780,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </body>
 </html>
+
 
 
 
