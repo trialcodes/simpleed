@@ -707,9 +707,10 @@ style="width:100%;max-width:600px;border-radius:10px;margin-top:10px;">
 </section>
 
 <footer>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 <div class="visitor-counter">
-👁 Visitors: <span id="visits">Loading...</span>
+👁 Visitors: <span id="busuanzi_value_site_pv"></span>
 </div>
 
 <p>Contact: 1996dragrat@gmail.com | +63 9975 373 560 </p>
@@ -720,12 +721,6 @@ style="width:100%;max-width:600px;border-radius:10px;margin-top:10px;">
      
 <script>
 
-fetch("counter.php")
-.then(response => response.text())
-.then(data => {
-document.getElementById("visits").innerText = data;
-});
-     
 function toggleMenu(){
 var menu = document.getElementById("navMenu");
 menu.classList.toggle("show");
@@ -791,6 +786,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </body>
 </html>
+
 
 
 
