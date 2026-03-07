@@ -305,6 +305,54 @@ header .logo h1 {
   letter-spacing: 2px;
 }
 
+     #ratings {
+  padding: 80px 40px;
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+#ratings h3 {
+  font-size: 36px;
+  color: red;
+  margin-bottom: 40px;
+}
+
+.rating-container {
+  max-width: 700px;
+  margin: 15px auto;
+  text-align: left;
+}
+
+.rating-label {
+  display: block;
+  font-weight: bold;
+  color: red;
+  margin-bottom: 5px;
+}
+
+.rating-bar {
+  width: 100%;
+  height: 20px;
+  background: #1a1a1a;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+.rating-fill {
+  height: 100%;
+  background: linear-gradient(90deg, red, #ff2e2e);
+  border-radius: 10px 0 0 10px;
+  transition: width 1.5s ease-in-out;
+}
+
+.rating-percent {
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+}
+
      /* MOBILE */
 
 @media(max-width:768px){
@@ -566,6 +614,42 @@ style="width:100%;max-width:600px;border-radius:10px;margin-top:10px;">
 </section>
 
 <!-- TESTIMONIAL -->
+     <section id="ratings" class="section">
+  <h3>Our Ratings</h3>
+
+  <div class="rating-container">
+    <span class="rating-label">Customer Satisfaction</span>
+    <div class="rating-bar">
+      <div class="rating-fill" style="width: 90%;"></div>
+    </div>
+    <span class="rating-percent">90%</span>
+  </div>
+
+  <div class="rating-container">
+    <span class="rating-label">Website Systems</span>
+    <div class="rating-bar">
+      <div class="rating-fill" style="width: 95%;"></div>
+    </div>
+    <span class="rating-percent">95%</span>
+  </div>
+
+  <div class="rating-container">
+    <span class="rating-label">Mobile Apps</span>
+    <div class="rating-bar">
+      <div class="rating-fill" style="width: 90%;"></div>
+    </div>
+    <span class="rating-percent">90%</span>
+  </div>
+
+  <div class="rating-container">
+    <span class="rating-label">Hosting & Domains</span>
+    <div class="rating-bar">
+      <div class="rating-fill" style="width: 85%;"></div>
+    </div>
+    <span class="rating-percent">85%</span>
+  </div>
+
+</section>
 
 <section id="contact" class="section">
 
@@ -643,6 +727,7 @@ counter("c3",150);
 
 </body>
 </html>
+
 
 
 
