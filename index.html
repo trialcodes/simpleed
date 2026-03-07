@@ -292,6 +292,45 @@ padding:15px;
 border-radius:6px;
 margin-top:5px;
 }
+  
+.contact-form{
+max-width:600px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.contact-form input,
+.contact-form textarea{
+padding:12px;
+border:none;
+border-radius:6px;
+background:#1a1a1a;
+color:white;
+font-size:16px;
+}
+
+.contact-form textarea{
+height:120px;
+resize:none;
+}
+
+.contact-form button{
+background:red;
+color:white;
+border:none;
+padding:12px;
+font-size:16px;
+border-radius:6px;
+cursor:pointer;
+transition:.3s;
+}
+
+.contact-form button:hover{
+background:#ff2e2e;
+}
+
 
 </style>
 </head>
@@ -515,6 +554,22 @@ style="width:100%;max-width:600px;border-radius:10px;margin-top:10px;">
 "Our mobile app improved productivity."
 </div>
 
+<h3>Contact Us</h3>
+
+<form action="sendmail.php" method="POST" class="contact-form">
+
+<input type="text" name="name" placeholder="Your Name" required>
+
+<input type="email" name="email" placeholder="Your Email" required>
+
+<input type="text" name="subject" placeholder="Subject" required>
+
+<textarea name="message" placeholder="Your Message" required></textarea>
+
+<button type="submit">Send Message</button>
+
+</form>
+
 </section>
 
 <footer>
@@ -559,6 +614,7 @@ counter("c3",150);
 
 </body>
 </html>
+
 
 
 
