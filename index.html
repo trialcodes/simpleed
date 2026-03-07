@@ -171,6 +171,54 @@ footer {
     flex-direction:column;
     align-items:center;
   }
+
+     .menu-toggle{
+  display:none;
+  font-size:28px;
+  cursor:pointer;
+  color:white;
+}
+
+/* NAVIGATION */
+nav{
+  display:flex;
+  align-items:center;
+}
+
+/* MOBILE NAV */
+@media(max-width:768px){
+
+.menu-toggle{
+  display:block;
+  position:absolute;
+  right:25px;
+  top:15px;
+}
+
+nav{
+  position:absolute;
+  top:65px;
+  left:0;
+  width:100%;
+  background:#111;
+  flex-direction:column;
+  display:none;
+  border-top:1px solid #333;
+}
+
+nav a{
+  padding:15px;
+  border-bottom:1px solid #222;
+  width:100%;
+  text-align:center;
+}
+
+nav.show{
+  display:flex;
+}
+
+}
+     
 }
 </style>
 </head>
@@ -179,7 +227,11 @@ footer {
 
 <header>
 <h1>SIMPLEED</h1>
-<nav>
+<div class="menu-toggle" onclick="toggleMenu()">
+☰
+</div>
+
+<nav id="navMenu">
   <a href="#home">Home</a>
   <a href="#services">Services</a>
   <a href="#team">Team</a>
@@ -188,6 +240,15 @@ footer {
   <a href="#contact" class="cta-btn">Contact</a>
 </nav>
 </header>
+
+<script>
+
+function toggleMenu(){
+  var menu = document.getElementById("navMenu");
+  menu.classList.toggle("show");
+}
+
+</script>
 
 <!-- HERO -->
 <section id="home" class="hero">
@@ -280,6 +341,7 @@ Beyond standard services, SIMPLEED also provides innovative tech products that i
 </body>
 
 </html>
+
 
 
 
